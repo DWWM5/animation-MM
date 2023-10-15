@@ -1,0 +1,43 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #242424;
+}
+.centre {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Déplace l'élément à 50% de sa largeur et 50% de sa hauteur pour le centrer */
+}
+.btn {
+  position: relative;
+  color: #CFE0C3;
+  display: block; /* Affichage en tant que bloc, prend toute la largeur disponible */
+  font-size: 100px;
+  font-family: 'roboto';
+  text-decoration: none;
+  margin: 30px 0; /* Marge supérieure de 30 pixels et aucune marge inférieure pour créer de l'espace autour du bouton */
+  border: 2px solid #45a29e;
+  padding: 80px 60px;
+  text-transform: uppercase;
+  overflow: hidden; /* Cache tout contenu débordant du bouton */
+  transition: 1s all ease; /* Transition d'une durée de 1 seconde pour toutes les propriétés avec une fonction de temporisation "ease" */
+  border-radius: 5%;
+}
+.btn::before {
+  background: #40798C;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Déplacement vertical et horizontal pour centrer le pseudosélecteur */
+  z-index: -1;
+  transition: all 0.6s ease; /* Transition de 0.6 seconde pour toutes les propriétés avec une fonction de temporisation "ease" */
+  width: 120%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(25deg);
+}
+.btn:hover::before {
+  height: 180%;
+}
